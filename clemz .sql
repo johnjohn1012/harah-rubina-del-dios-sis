@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2020 at 02:33 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Feb 12, 2025 at 01:15 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `prince`
+-- Database: `clemz`
 --
 
 -- --------------------------------------------------------
@@ -31,21 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `category` (
   `CATEGORY_ID` int(11) NOT NULL,
   `CNAME` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`CATEGORY_ID`, `CNAME`) VALUES
-(0, 'Keyboard'),
-(1, 'Mouse'),
-(2, 'Monitor'),
-(3, 'Motherboard'),
-(4, 'Processor'),
-(5, 'Power Supply'),
-(6, 'Headset'),
-(7, 'CPU'),
+(0, 'Milktea'),
+(1, 'Softdrinks'),
+(2, 'Liquior'),
+(3, 'UnliFoods'),
+(4, 'Grapes'),
+(5, 'Billiards'),
+(6, 'Pizza'),
+(7, 'Coffee'),
 (9, 'Others');
 
 -- --------------------------------------------------------
@@ -59,7 +58,7 @@ CREATE TABLE `customer` (
   `FIRST_NAME` varchar(50) DEFAULT NULL,
   `LAST_NAME` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `customer`
@@ -67,10 +66,11 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`CUST_ID`, `FIRST_NAME`, `LAST_NAME`, `PHONE_NUMBER`) VALUES
 (9, 'Hailee', 'Steinfield', '09394566543'),
-(11, 'A Walk in Customer', NULL, NULL),
+(11, 'A Walk in Customer', 'Clemeña', '09533480232'),
 (14, 'Chuchay', 'Jusay', '09781633451'),
 (15, 'Kimbert', 'Duyag', '09956288467'),
-(16, 'Dieqcohr', 'Rufino', '09891344576');
+(16, 'Dieqcohr', 'Rufino', '09891344576'),
+(17, 'gino', 'clemen', '093223');
 
 -- --------------------------------------------------------
 
@@ -88,16 +88,17 @@ CREATE TABLE `employee` (
   `JOB_ID` int(11) DEFAULT NULL,
   `HIRED_DATE` varchar(50) NOT NULL,
   `LOCATION_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`EMPLOYEE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMAIL`, `PHONE_NUMBER`, `JOB_ID`, `HIRED_DATE`, `LOCATION_ID`) VALUES
-(1, '1 Source', 'Code', 'Male', 'admin23@gmail.com', '09124033805', 1, '0000-00-00', 113),
-(2, 'Josuey', 'Mag-asos', 'Male', 'jmagaso@yahoo.com', '09091245761', 2, '2019-01-28', 156),
-(4, 'Monica', 'Empinado', 'Female', 'monicapadernal@gmail.com', '09123357105', 1, '2019-03-06', 158);
+(1, 'john', 'clemz', 'Male', 'admin23@gmail.com', '09124033805', 1, '0000-00-00', 113),
+(2, 'clemenz', 'john', 'Male', 'clemenz@yahoo.com', '09091245761', 2, '2025-02-12', 156),
+(4, 'Monica', 'Empinado', 'Female', 'monicapadernal@gmail.com', '09123357105', 1, '2019-03-06', 158),
+(5, 'kupal', 'john', 'Male', 'joqu.clemena.coc@phinmaed.com', '09533480232', 4, '2025-02-12', 159);
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ INSERT INTO `employee` (`EMPLOYEE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMA
 CREATE TABLE `job` (
   `JOB_ID` int(11) NOT NULL,
   `JOB_TITLE` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `job`
@@ -116,7 +117,10 @@ CREATE TABLE `job` (
 
 INSERT INTO `job` (`JOB_ID`, `JOB_TITLE`) VALUES
 (1, 'Manager'),
-(2, 'Cashier');
+(2, 'Cashier'),
+(3, 'Staff'),
+(4, 'Gardener'),
+(5, 'Farm Maintenance');
 
 -- --------------------------------------------------------
 
@@ -128,7 +132,7 @@ CREATE TABLE `location` (
   `LOCATION_ID` int(11) NOT NULL,
   `PROVINCE` varchar(100) DEFAULT NULL,
   `CITY` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `location`
@@ -137,7 +141,7 @@ CREATE TABLE `location` (
 INSERT INTO `location` (`LOCATION_ID`, `PROVINCE`, `CITY`) VALUES
 (111, 'Negros Occidental', 'Bacolod City'),
 (112, 'Negros Occidental', 'Bacolod City'),
-(113, 'Negros Occidental', 'Metro Manila'),
+(113, 'Misamis Oriental', 'Cagayan de Oro'),
 (114, 'Negros Occidental', 'Himamaylan'),
 (115, 'Negros Oriental', 'Dumaguette City'),
 (116, 'Negros Occidental', 'Isabella'),
@@ -168,9 +172,10 @@ INSERT INTO `location` (`LOCATION_ID`, `PROVINCE`, `CITY`) VALUES
 (153, 'Batangas', 'Mabini'),
 (154, 'Bataan', 'Morong'),
 (155, 'Capiz', 'Pillar'),
-(156, 'Negros Occidental', 'Bacolod'),
+(156, 'Misamis Oriental', 'Cagayan de Oro'),
 (157, 'Camarines Norte', 'Labo'),
-(158, 'Negros Occidental', 'Binalbagan');
+(158, 'Negros Occidental', 'Binalbagan'),
+(159, 'Bukidnon', 'Kitaotao');
 
 -- --------------------------------------------------------
 
@@ -184,7 +189,7 @@ CREATE TABLE `manager` (
   `LOCATION_ID` int(11) NOT NULL,
   `EMAIL` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `manager`
@@ -213,7 +218,7 @@ CREATE TABLE `product` (
   `CATEGORY_ID` int(11) DEFAULT NULL,
   `SUPPLIER_ID` int(11) DEFAULT NULL,
   `DATE_STOCK_IN` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `product`
@@ -244,7 +249,107 @@ INSERT INTO `product` (`PRODUCT_ID`, `PRODUCT_CODE`, `NAME`, `DESCRIPTION`, `QTY
 (24, '20191001', 'Lenovo ideapad 20059', 'hehe', 1, 1, 32999, 7, 12, '2019-03-11'),
 (25, '20191001', 'Lenovo ideapad 20059', 'hehe', 1, 1, 32999, 7, 12, '2019-03-11'),
 (26, '20191001', 'Lenovo ideapad 20059', 'hehe', 1, 1, 32999, 7, 12, '2019-03-11'),
-(27, '20191005', 'A4tech OP-720', 'normal mouse', 1, 1, 289, 1, 16, '2019-03-13');
+(27, '20191005', 'A4tech OP-720', 'normal mouse', 1, 1, 289, 1, 16, '2019-03-13'),
+(28, '1', 'mocha', 'dasd', 12, 1, 90, 0, 12, '2025-02-12'),
+(29, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(30, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(31, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(32, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(33, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(34, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(35, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(36, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(37, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(38, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(39, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(40, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(41, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(42, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(43, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(44, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(45, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(46, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(47, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(48, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(49, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(50, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(51, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(52, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(53, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(54, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(55, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(56, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(57, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(58, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(59, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(60, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(61, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(62, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(63, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(64, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(65, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(66, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(67, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(68, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(69, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(70, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(71, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(72, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(73, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(74, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(75, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(76, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(77, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(78, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(79, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(80, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(81, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(82, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(83, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(84, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(85, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(86, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(87, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(88, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(89, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(90, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(91, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(92, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(93, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(94, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(95, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(96, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(97, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(98, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(99, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(100, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(101, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(102, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(103, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(104, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(105, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(106, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(107, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(108, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(109, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(110, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(111, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(112, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(113, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(114, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(115, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(116, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(117, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(118, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(119, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(120, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(121, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(122, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(123, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(124, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(125, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(126, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12'),
+(127, '1', 'mocha', 'dasd', 1, 1, 90, 0, 12, '2025-02-12');
 
 -- --------------------------------------------------------
 
@@ -257,7 +362,7 @@ CREATE TABLE `supplier` (
   `COMPANY_NAME` varchar(50) DEFAULT NULL,
   `LOCATION_ID` int(11) NOT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `supplier`
@@ -288,7 +393,7 @@ CREATE TABLE `transaction` (
   `CASH` varchar(250) NOT NULL,
   `DATE` varchar(50) NOT NULL,
   `TRANS_D_ID` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `transaction`
@@ -304,7 +409,11 @@ INSERT INTO `transaction` (`TRANS_ID`, `CUST_ID`, `NUMOFITEMS`, `SUBTOTAL`, `LES
 (9, 14, '1', '1,718.00', '184.07', '1,533.93', '184.07', '1,718.00', '2000', '2019-03-18', '0318170551'),
 (10, 11, '1', '289.00', '30.96', '258.04', '30.96', '289.00', '500', '2019-03-18', '0318170624'),
 (11, 9, '2', '1,148.00', '123.00', '1,025.00', '123.00', '1,148.00', '2000', '2019-03-18', '0318170825'),
-(12, 9, '1', '5,500.00', '589.29', '4,910.71', '589.29', '5,500.00', '6000', '2019-03-18 19:40 pm', '0318194016');
+(12, 9, '1', '5,500.00', '589.29', '4,910.71', '589.29', '5,500.00', '6000', '2019-03-18 19:40 pm', '0318194016'),
+(13, 11, '1', '1,650.00', '176.79', '1,473.21', '176.79', '1,650.00', '1700', '2025-02-12 06:43 am', '021264407'),
+(14, 11, '3', '1,238.00', '132.64', '1,105.36', '132.64', '1,238.00', '2500', '2025-02-12 10:48 am', '0212104848'),
+(15, 11, '2', '379.00', '0.00', '379.00', '379.00', '379.00', '500', '2025-02-12 12:52 pm', '0212125259'),
+(16, 11, '2', '640.00', '0.00', '640.00', '640.00', '640.00', '4500', '2025-02-12 12:59 pm', '0212125958');
 
 -- --------------------------------------------------------
 
@@ -320,7 +429,7 @@ CREATE TABLE `transaction_details` (
   `PRICE` varchar(250) NOT NULL,
   `EMPLOYEE` varchar(250) NOT NULL,
   `ROLE` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `transaction_details`
@@ -340,7 +449,15 @@ INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE
 (17, '0318170624', 'A4tech OP-720', '1', '289', 'Prince Ly', 'Manager'),
 (18, '0318170825', 'A4tech OP-720', '1', '289', 'Prince Ly', 'Manager'),
 (19, '0318170825', 'Fantech EG1', '1', '859', 'Prince Ly', 'Manager'),
-(20, '0318194016', 'Newmen E120', '10', '550', 'Josuey', 'Cashier');
+(20, '0318194016', 'Newmen E120', '10', '550', 'Josuey', 'Cashier'),
+(21, '021264407', 'Newmen E120', '3', '550', 'john', 'Manager'),
+(22, '0212104848', 'mocha', '1', '90', 'clemenz', 'Cashier'),
+(23, '0212104848', 'Fantech EG1', '1', '859', 'clemenz', 'Cashier'),
+(24, '0212104848', 'A4tech OP-720', '1', '289', 'clemenz', 'Cashier'),
+(25, '0212125259', 'mocha', '1', '90', 'clemenz', 'Cashier'),
+(26, '0212125259', 'A4tech OP-720', '1', '289', 'clemenz', 'Cashier'),
+(27, '0212125958', 'mocha', '1', '90', 'clemenz', 'Cashier'),
+(28, '0212125958', 'Newmen E120', '1', '550', 'clemenz', 'Cashier');
 
 -- --------------------------------------------------------
 
@@ -351,7 +468,7 @@ INSERT INTO `transaction_details` (`ID`, `TRANS_D_ID`, `PRODUCTS`, `QTY`, `PRICE
 CREATE TABLE `type` (
   `TYPE_ID` int(11) NOT NULL,
   `TYPE` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `type`
@@ -373,16 +490,15 @@ CREATE TABLE `users` (
   `USERNAME` varchar(50) DEFAULT NULL,
   `PASSWORD` varchar(50) DEFAULT NULL,
   `TYPE_ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`ID`, `EMPLOYEE_ID`, `USERNAME`, `PASSWORD`, `TYPE_ID`) VALUES
-(1, 1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(7, 2, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 2),
-(9, 4, 'mncpdrnl', '8cb2237d0679ca88db6464eac60da96345513964', 2);
+(1, 1, 'clemenz', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1),
+(7, 2, 'clemenzuser', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2);
 
 --
 -- Indexes for dumped tables
@@ -487,25 +603,25 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `CUST_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `CUST_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `EMPLOYEE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `EMPLOYEE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `location`
 --
 ALTER TABLE `location`
-  MODIFY `LOCATION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `LOCATION_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT for table `supplier`
@@ -517,13 +633,13 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `TRANS_ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `TRANS_ID` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `transaction_details`
 --
 ALTER TABLE `transaction_details`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`
