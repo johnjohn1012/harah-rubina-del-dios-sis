@@ -53,7 +53,7 @@ if ($Aa=='User'){
                 </div>
             </div>
         </div>
-
+        
         <!-- Supplier record -->
         <div class="col-md-3 mb-3">
             <div class="card border-left-warning shadow h-100 py-2">
@@ -231,6 +231,69 @@ if ($Aa=='User'){
             </div>
         </div>
     </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Business Analytics</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="analyticsTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Total Sales</th>
+                                    <th>Average Price</th>
+                                    <th>Sold Quantity</th>
+                                    <th>Last Sale Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Product A</td>
+                                    <td>1500</td>
+                                    <td>50</td>
+                                    <td>30</td>
+                                    <td>2025-02-10</td>
+                                </tr>
+                                <tr>
+                                    <td>Product B</td>
+                                    <td>2500</td>
+                                    <td>100</td>
+                                    <td>25</td>
+                                    <td>2025-02-09</td>
+                                </tr>
+                                <tr>
+                                    <td>Product C</td>
+                                    <td>1200</td>
+                                    <td>60</td>
+                                    <td>20</td>
+                                    <td>2025-02-08</td>
+                                </tr>
+                                <tr>
+                                    <td>Product D</td>
+                                    <td>3000</td>
+                                    <td>120</td>
+                                    <td>25</td>
+                                    <td>2025-02-07</td>
+                                </tr>
+                                <tr>
+                                    <td>Product E</td>
+                                    <td>1800</td>
+                                    <td>60</td>
+                                    <td>30</td>
+                                    <td>2025-02-06</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
