@@ -158,6 +158,15 @@
         </a>
     </li>
 
+    
+    <li class="nav-item">
+    <a class="nav-link" href="transaction.php">
+        <i class="fas fa-fw fa-chart-line"></i> <!-- Updated icon for Sales Report -->
+            <span>Sales Report</span>
+        </a>
+    </li>
+
+
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Maintenance Section -->
