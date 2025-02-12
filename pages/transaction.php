@@ -33,7 +33,8 @@ include'../includes/sidebar.php';
                      <th width="19%">Transaction Number</th>
                      <th>Customer</th>
                      <th width="13%"># of Items</th>
-                     <th width="11%">Action</th>
+                     <th style="text-align: center;">Action</th>
+
                    </tr>
                </thead>
           <tbody>
@@ -51,7 +52,7 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['TRANS_D_ID'].'</td>';
                 echo '<td>'. $row['FIRST_NAME'].' '. $row['LAST_NAME'].'</td>';
                 echo '<td>'. $row['NUMOFITEMS'].'</td>';
-                      echo '<td align="right">
+                      echo '<td align="center">
                               <a type="button" class="btn btn-primary bg-gradient-primary" href="trans_view.php?action=edit & id='.$row['TRANS_ID'] . '"><i class="fas fa-fw fa-th-list"></i> View</a>
                           </div> </td>';
                 echo '</tr> ';

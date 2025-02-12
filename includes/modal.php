@@ -61,7 +61,8 @@ window.onload = function() {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
+        <h5 class="modal-title" style="text-align: center; width: 100%; font-weight: bold;" id="exampleModalLabel">Add Customer</h5>
+
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -91,7 +92,7 @@ window.onload = function() {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
+        <h5 class="modal-title" style="text-align: center; width: 100%; font-weight: bold;" id="exampleModalLabel">Add Customer</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -121,7 +122,7 @@ window.onload = function() {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+        <h5 class="modal-title" style="text-align: center; width: 100%; font-weight: bold;" id="exampleModalLabel">Add Employee</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>

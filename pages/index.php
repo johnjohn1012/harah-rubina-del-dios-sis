@@ -1,6 +1,6 @@
 <?php
-include'../includes/connection.php';
-include'../includes/sidebar.php';
+include '../includes/connection.php';
+include '../includes/sidebar.php';
 ?><?php 
 
                 $query = 'SELECT ID, t.TYPE
@@ -22,7 +22,41 @@ if ($Aa=='User'){
                          
            
 }   
+
+
+
+
+
+
+
             ?>
+
+            <style>
+                .custom-card {
+                    transition: 0.3s ease-in-out;
+                }
+
+                .custom-card:hover {
+                    background-color:rgb(11, 102, 57) !important; /* Changes background color on hover */
+                    color: white !important; /* Changes text color on hover */
+                    box-shadow: 0px 0px 20px rgba(4, 243, 56, 0.8); /* Glowing effect */
+                    transform: scale(1.05); /* Slight zoom effect */
+                }
+
+                /* Ensures inner text remains white on hover */
+                .custom-card:hover .text-primary {
+                    color: white !important;
+                }
+
+                .custom-card:hover .h6 {
+                    color: white !important;
+                }
+
+                .custom-card:hover i {
+                    color: white !important;
+                }
+
+            </style>
 
 
 
@@ -30,58 +64,63 @@ if ($Aa=='User'){
 <div class="container-fluid">
     <div class="row">
         <!-- Customer record -->
-        <div class="col-md-3 mb-3">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Customers</div>
-                            <div class="h6 mb-0 font-weight-bold text-gray-800">
-                                <?php 
-                                $query = "SELECT COUNT(*) FROM customer";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo "$row[0]";
-                                }
-                                ?> Record(s)
+                <div class="col-md-3 mb-3">
+                    <a href="customer.php" style="text-decoration: none; color: inherit;">
+                        <div class="card border-left-primary shadow h-100 py-2 custom-card">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-0">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Customers</div>
+                                        <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                            <?php 
+                                            $query = "SELECT COUNT(*) FROM customer";
+                                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                            while ($row = mysqli_fetch_array($result)) {
+                                                echo "$row[0]";
+                                            }
+                                            ?> Record(s)
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i  href="customer.php" class="fas fa-users fa-3x" style="color: #007bff;"></i> <!-- Colorful and larger icon -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-auto">
-                            <i class="fas fa-users fa-3x" style="color: #007bff;"></i> <!-- Colorful and larger icon -->
-                        </div>
-                    </div>
+                    </a>
                 </div>
-            </div>
-        </div>
         
         <!-- Supplier record -->
-        <div class="col-md-3 mb-3">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Supplier</div>
-                            <div class="h6 mb-0 font-weight-bold text-gray-800">
-                                <?php 
-                                $query = "SELECT COUNT(*) FROM supplier";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo "$row[0]";
-                                }
-                                ?> Record(s)
+            <div class="col-md-3 mb-3">
+            <a href="supplier.php" style="text-decoration: none; color: inherit;">
+                <div class="card border-left-warning shadow h-100 py-2 custom-card">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-0">
+                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Supplier</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                    <?php 
+                                    $query = "SELECT COUNT(*) FROM supplier";
+                                    $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        echo "$row[0]";
+                                    }
+                                    ?> Record(s)
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-truck fa-3x" style="color: #f39c12;"></i> <!-- Modern icon with color -->
+                            <div class="col-auto">
+                                <i class="fas fa-truck fa-3x" style="color: #f39c12;"></i> <!-- Modern icon with color -->
+                            </div>
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
-        </div>
 
         <!-- Employee record -->
         <div class="col-md-3 mb-3">
-            <div class="card border-left-success shadow h-100 py-2">
+        <a href="employee.php" style="text-decoration: none; color: inherit; ">
+            <div class="card border-left-success shadow h-100 py-2 custom-card">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
@@ -102,11 +141,13 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
+        </a>
         </div>
 
         <!-- Registered Account record -->
         <div class="col-md-3 mb-3">
-            <div class="card border-left-danger shadow h-100 py-2">
+            <a href="user.php" style="text-decoration: none; color: inherit; ">
+            <div class="card border-left-danger shadow h-100 py-2 custom-card">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
@@ -127,13 +168,15 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
+            </a>
         </div>
     </div>
 
     <div class="row">
         <!-- Product record -->
         <div class="col-md-3 mb-3">
-            <div class="card border-left-info shadow h-100 py-2">
+        <a href="product.php" style="text-decoration: none; color: inherit; custom-card">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
@@ -154,11 +197,13 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
+        </a>
         </div>
 
         <!-- Transaction record -->
         <div class="col-md-3 mb-3">
-            <div class="card border-left-info shadow h-100 py-2">
+        <a href="transaction.php" style="text-decoration: none; color: inherit; custom-card">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
@@ -179,11 +224,13 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
+        </a>
         </div>
 
         <!-- Orders record -->
         <div class="col-md-3 mb-3">
-            <div class="card border-left-info shadow h-100 py-2">
+        <a href="transaction.php" style="text-decoration: none; color: inherit; custom-card">
+            <div class="card border-left-info shadow h-100 py-2 custom-card">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-0">
@@ -204,37 +251,41 @@ if ($Aa=='User'){
                     </div>
                 </div>
             </div>
+        </a>
         </div>
 
-        <!-- Total Sales record -->
-        <div class="col-md-3 mb-3">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-0">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Sales</div>
-                            <div class="h6 mb-0 font-weight-bold text-gray-800">
-                            <?php 
-                                $query = "SELECT COUNT(*) FROM transaction";
-                                $result = mysqli_query($db, $query) or die(mysqli_error($db));
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo "$row[0]";
-                                }
-                                ?> Record(s)
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-3x" style="color: #28a745;"></i> <!-- Green icon for total sales -->
-                        </div>
+<!-- Total Sales record -->
+<div class="col-md-3 mb-3">
+    <div class="card border-left-info shadow h-100 py-2 custom-card">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-0">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Sales</div>
+                    <div class="h6 mb-0 font-weight-bold text-gray-800">
+                        <?php 
+                            // Query to sum the GRANDTOTAL from the transaction table
+                            $query = "SELECT SUM(GRANDTOTAL) AS total_sales FROM transaction";
+                            $result = mysqli_query($db, $query) or die(mysqli_error($db));
+                            $row = mysqli_fetch_assoc($result);
+                            
+                            // Display the total sales, formatted as currency
+                            echo "₱ " . number_format($row['total_sales'], 2);
+                        ?>
                     </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-money-bill fa-3x" style="color:rgb(137, 77, 216);"></i> <!-- Green icon for total sales -->
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+    </div>
 
     <div class="row mt-4">
         <div class="col-md-12">
-            <div class="card shadow mb-4">
+            <div class="card shadow mb-4 custom-card">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Business Analytics</h6>
                 </div>

@@ -55,7 +55,8 @@ $sup .= "</select>";
                      <th>Name</th>
                      <th>Price</th>
                      <th>Category</th>
-                     <th>Action</th>
+                     <th style="text-align: center;">Action</th>
+
                    </tr>
                </thead>
           <tbody>
@@ -71,7 +72,7 @@ $sup .= "</select>";
                 echo '<td>'. $row['NAME'].'</td>';
                 echo '<td>'. $row['PRICE'].'</td>';
                 echo '<td>'. $row['CNAME'].'</td>';
-                      echo '<td align="right"> <div class="btn-group">
+                      echo '<td align="center"> <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary" href="pro_searchfrm.php?action=edit & id='.$row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
                             <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
@@ -104,7 +105,8 @@ include'../includes/footer.php';
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+        <h5 class="modal-title" style="text-align: center; width: 100%; font-weight: bold;" id="exampleModalLabel">Add Product</h5>
+
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>

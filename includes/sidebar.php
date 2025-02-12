@@ -145,12 +145,14 @@
             <span>Inventory</span>
         </a>
     </li>
+
     <li class="nav-item">
         <a class="nav-link" href="transaction.php">
             <i class="fas fa-fw fa-retweet"></i>
-            <span>Transaction</span>
+            <span>Transactions</span>
         </a>
     </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="supplier.php">
             <i class="fas fa-fw fa-cogs"></i>
@@ -158,9 +160,8 @@
         </a>
     </li>
 
-    
     <li class="nav-item">
-    <a class="nav-link" href="transaction.php">
+    <a class="nav-link" href="sales_report.php">
         <i class="fas fa-fw fa-chart-line"></i> <!-- Updated icon for Sales Report -->
             <span>Sales Report</span>
         </a>

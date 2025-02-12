@@ -37,7 +37,8 @@ if ($Aa=='User'){
                           <th>First Name</th>
                           <th>Last Name</th>
                           <th>Role</th>
-                          <th>Action</th>
+                          <th style="text-align: center;">Action</th>
+
                         </tr>
                      </thead>
                     <tbody>
@@ -50,7 +51,7 @@ if ($Aa=='User'){
                         echo '<td>'. $row['LAST_NAME'].'</td>';
                         echo '<td>'. $row['JOB_TITLE'].'</td>';
 
-                      echo '<td align="right"> <div class="btn-group">
+                      echo '<td align="center"> <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary" href="emp_searchfrm.php?action=edit & id='.$row['EMPLOYEE_ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
                             <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">

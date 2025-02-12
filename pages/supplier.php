@@ -34,7 +34,8 @@ include'../includes/sidebar.php';
                        <th>Province</th>
                        <th>City</th>
                        <th>Phone Number</th>
-                       <th>Option</th>
+                       <th style="text-align: center;">Action</th>
+
                    </tr>
                </thead>
           <tbody>
@@ -48,7 +49,7 @@ include'../includes/sidebar.php';
                 echo '<td>'. $row['PROVINCE'].'</td>';
                 echo '<td>'. $row['CITY'].'</td>';
                 echo '<td>'. $row['PHONE_NUMBER'].'</td>';
-                      echo '<td align="right"> <div class="btn-group">
+                      echo '<td align="center"> <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary" href="sup_searchfrm.php?action=edit & id='.$row['SUPPLIER_ID'] . '"><i class="fas fa-fw fa-list-alt"></i> Details</a>
                             <div class="btn-group">
                               <a type="button" class="btn btn-primary bg-gradient-primary dropdown no-arrow" data-toggle="dropdown" style="color:white;">
