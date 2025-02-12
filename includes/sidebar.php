@@ -78,15 +78,22 @@
 
    
     <!-- Sidebar structure -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="width: 100px;">
+
     <!-- Sidebar Brand -->
      
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon">
-            <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
-        </div>
-        <div class="sidebar-brand-text mx-2">Harah Rubina Del Dios SIS</div>
-    </a>
+    <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
+    <!-- Logo -->
+    <div class="sidebar-brand-icon">
+        <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
+    </div>
+
+    <!-- Text -->
+    <div class="sidebar-brand-text" style="display: flex; align-items: center; font-size: larger; font-weight: bold; white-space: nowrap;">
+        Harah Rubina Del Dios SIS
+    </div>
+        </a>
+
       <br>
     <!-- Divider -->
     <hr class="sidebar-divider my-0">

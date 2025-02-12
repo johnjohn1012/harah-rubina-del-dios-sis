@@ -28,6 +28,13 @@
   color: white;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+  text-decoration: none;
+  
+}
+
+.sidebar-brand-text:hover {
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+    text-decoration: none;
 }
 </style>
   <meta charset="utf-8">
@@ -52,6 +59,8 @@
   <link rel="stylesheet" href="cart.css" />
 </head>
 
+
+
 <body id="page-top">
           
   <!-- Page Wrapper -->
@@ -64,14 +73,21 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="background: linear-gradient(135deg,rgb(205, 182, 185), #ADD8E6);">
+        <nav class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow">
         <!-- Your content here -->
 
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
             <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
         </div>
-        <div class="sidebar-brand-text mx-3">Harah Rubina Del Dios Sales & Inventory System</div>
+          
+        <div class="sidebar-brand-text mx-4" style="text-align: center; width: 100%; font-weight: bold; color: white;">
+            Harah Rubina Del Dios Sales & Inventory System
+        </div>
+
+
+             
+
       </a>
 
           <!-- Topbar Navbar -->
@@ -83,18 +99,21 @@
               </a>
             </li> -->
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+ 
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?></span>
+              <span class="mr-2 d-none d-lg-inline small" style="color: white; font-weight: bold;">
+              <?php echo $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME']; ?>
+              </span>
+
                 <img class="img-profile rounded-circle"
                 <?php
                   if($_SESSION['GENDER']=='Male'){
-                    echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS0rikanm-OEchWDtCAWQ_s1hQq1nOlQUeJr242AdtgqcdEgm0Dg"';
+                    echo 'src="../img/boy.png"';
                   }else{
-                    echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNngF0RFPjyGl4ybo78-XYxxeap88Nvsyj1_txm6L4eheH8ZBu"';
+                    echo 'src="../img/girl.png"';
                   }
                 ?>>
 

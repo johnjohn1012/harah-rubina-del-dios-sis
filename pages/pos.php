@@ -182,5 +182,5 @@ function pre_r($array){
 
 <?php
 include 'posside.php';
-include'../includes/footer.php';
+include '../includes/footer.php';
 ?>
