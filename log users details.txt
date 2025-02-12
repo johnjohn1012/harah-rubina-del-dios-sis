@@ -3,7 +3,10 @@ admin
 user: clemez
 pass: 1234
 
-user
-user: clemenzuser
+users
+username: clemenzusergirl
+pass: 1234
+
+username: clemenzuserboy
 pass: 1234
 
