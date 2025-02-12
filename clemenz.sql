@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2025 at 01:15 PM
+-- Generation Time: Feb 12, 2025 at 04:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clemz`
+-- Database: `clemenz`
 --
 
 -- --------------------------------------------------------
@@ -97,7 +97,7 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`EMPLOYEE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMAIL`, `PHONE_NUMBER`, `JOB_ID`, `HIRED_DATE`, `LOCATION_ID`) VALUES
 (1, 'john', 'clemz', 'Male', 'admin23@gmail.com', '09124033805', 1, '0000-00-00', 113),
 (2, 'clemenz', 'john', 'Male', 'clemenz@yahoo.com', '09091245761', 2, '2025-02-12', 156),
-(4, 'Monica', 'Empinado', 'Female', 'monicapadernal@gmail.com', '09123357105', 1, '2019-03-06', 158),
+(4, 'jana', 'clemenz', 'Female', 'jana@gmail.com', '09123357105', 1, '2025-02-06', 158),
 (5, 'kupal', 'john', 'Male', 'joqu.clemena.coc@phinmaed.com', '09533480232', 4, '2025-02-12', 159);
 
 -- --------------------------------------------------------
@@ -174,7 +174,7 @@ INSERT INTO `location` (`LOCATION_ID`, `PROVINCE`, `CITY`) VALUES
 (155, 'Capiz', 'Pillar'),
 (156, 'Misamis Oriental', 'Cagayan de Oro'),
 (157, 'Camarines Norte', 'Labo'),
-(158, 'Negros Occidental', 'Binalbagan'),
+(158, 'Misamis Oriental', 'Cagayan de Oro'),
 (159, 'Bukidnon', 'Kitaotao');
 
 -- --------------------------------------------------------
@@ -498,7 +498,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `EMPLOYEE_ID`, `USERNAME`, `PASSWORD`, `TYPE_ID`) VALUES
 (1, 1, 'clemenz', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1),
-(7, 2, 'clemenzuser', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2);
+(7, 2, 'clemenzuserboy', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2),
+(10, 4, 'clemenzusergirl', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 2);
 
 --
 -- Indexes for dumped tables
@@ -645,7 +646,7 @@ ALTER TABLE `transaction_details`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
