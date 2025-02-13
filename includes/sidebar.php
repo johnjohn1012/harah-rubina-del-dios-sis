@@ -6,57 +6,47 @@
 <html lang="en">
 
 <head>
-  
   <style type="text/css">
+    /* Sidebar Brand */
+    /* Hover effect on sidebar items */
+    .nav-item:hover {
+      background-color: rgba(54, 190, 24, 0.5);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
 
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 2;
+      cursor: pointer;
+    }
 
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
 
-/* Sidebar Brand */
-
-
-/* Hover effect on sidebar items */
-.nav-item:hover {
-    background-color: rgba(54, 190, 24, 0.5);
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-
-
-
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
-}
-#text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-}
-
-
-
-</style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Harah Rubina Del Dios Sales and Inventory System</title>
+  <title>Harah Rubina Del Dios Sales and Inventory System</title>
   <link rel="icon" href="../img/logos.png" type="image/gif" sizes="16x16">
 
   <!-- Custom fonts for this template-->
@@ -70,136 +60,134 @@
   <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
-
 <body id="page-top">
-          
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-   
     <!-- Sidebar structure -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="width: 100px;">
 
-    <!-- Sidebar Brand -->
-     
-    <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
-    <!-- Logo -->
-    <div class="sidebar-brand-icon">
-        <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
-    </div>
+      <!-- Sidebar Brand -->
+      <a class="sidebar-brand d-flex align-items-center" href="index.php" style="display: flex; flex-direction: row; gap: 40px;">
+        <!-- Logo -->
+        <div class="sidebar-brand-icon">
+          <img src="../img/logos.png" alt="Brand Logo" style="width: 76px; height: 76px;">
+        </div>
 
-    <!-- Text -->
-    <div class="sidebar-brand-text" style="display: flex; align-items: center; font-size: larger; font-weight: bold; white-space: nowrap;">
-        Harah Rubina Del Dios SIS
-    </div>
-        </a>
+        <!-- Text -->
+        <div class="sidebar-brand-text" style="display: flex; align-items: center; font-size: larger; font-weight: bold; white-space: nowrap;">
+          Harah Rubina Del Dios SIS
+        </div>
+      </a>
+      <br>
 
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
       <br>
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-      <br>
-    <!-- Home Section -->
-    <div class="sidebar-heading">
+
+  
+      <div class="sidebar-heading">
         HOME
-    </div>
+      </div>
 
-    
-    <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="index.php">
-            <i class="fas fa-fw fa-home"></i>
-            <span>Dashboard</span>
+          <i class="fas fa-fw fa-home"></i>
+          <span>Dashboard</span>
         </a>
-    </li>
+      </li>
 
-    <hr class="sidebar-divider">
+      <hr class="sidebar-divider">
 
-    <!-- Master List Section -->
-    <div class="sidebar-heading">
+ 
+      <div class="sidebar-heading">
         MASTER LIST
-    </div>
+      </div>
 
-
-
-
-            <li class="nav-item">
-        <a class="nav-link" href="pos.php">
-            <i class="fas fa-fw fa-user"></i>
-            <span>POS</span>
+          
+               <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Pos & Orders</span>
         </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="customer.php">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Customer</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="employee.php">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Employee</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="product.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Product</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="inventory.php">
-            <i class="fas fa-fw fa-archive"></i>
-            <span>Inventory</span>
-        </a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="transaction.php">
-            <i class="fas fa-fw fa-retweet"></i>
-            <span>Transactions</span>
-        </a>
-    </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
     
-    <li class="nav-item">
-        <a class="nav-link" href="supplier.php">
-            <i class="fas fa-fw fa-cogs"></i>
-            <span>Supplier</span>
+          <a class="dropdown-item" href="pos.php">Pos</a>
+          <a class="dropdown-item" href="transaction.php">Order</a>
+          
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Customers & Employee</span>
         </a>
-    </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
+    
+          <a class="dropdown-item" href="dashboard.php">Customers</a>
+          <a class="dropdown-item" href="item_list.php">Employee</a>
+          
+        </div>
+      </li>
 
-    <li class="nav-item">
-    <a class="nav-link" href="sales_report.php">
-        <i class="fas fa-fw fa-chart-line"></i> <!-- Updated icon for Sales Report -->
-            <span>Sales Report</span>
+    
+
+
+                 <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Sales & Transactions</span>
         </a>
-    </li>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
+    
+          <a class="dropdown-item" href="dashboard.php">Sales</a>
+          <a class="dropdown-item" href="item_list.php">Transactions</a>
+          
+        </div>
+      </li>
 
 
-    <hr class="sidebar-divider d-none d-md-block">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Stock Inventory</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: calc(86% + 30px); min-width: 180px;">
+    
+     
+            <a class="dropdown-item" href="purchase_order.php">Purchase Order</a>
+            <a class="dropdown-item" href="receiving.php">Receiving</a>
+            <a class="dropdown-item" href="back_order.php">Back Order</a>
+            <a class="dropdown-item" href="return_list.php">Return List</a>
+            <a class="dropdown-item" href="stock.php">Stocks</a>
+            <a class="dropdown-item" href="sale_list.php">Sale List</a>
+            <a class="dropdown-item" href="supplier_list.php">Supplier List</a>
+            <a class="dropdown-item" href="item_list.php">Item List</a>
+            <a class="dropdown-item" href="user_list.php">User List</a>
+           
+        </div>
+      </li>
 
-    <!-- Maintenance Section -->
-    <div class="sidebar-heading">
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Maintenance Section -->
+      <div class="sidebar-heading">
         MAINTENANCE
-    </div>
-    <li class="nav-item">
+      </div>
+      <li class="nav-item">
         <a class="nav-link" href="user.php">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Accounts</span>
+          <i class="fas fa-fw fa-users"></i>
+          <span>Accounts</span>
         </a>
-    </li>
+      </li>
 
-
-         <!-- Sidebar Toggler (Sidebar) -->
-         <div class="text-center d-none d-md-inline">
+      <!-- Sidebar Toggler -->
+      <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-          </div>
+      </div>
 
-
-  </ul>
-
-    
-
-
+    </ul>
 
     <!-- End of Sidebar -->
     <?php include_once 'topbar.php'; ?>
